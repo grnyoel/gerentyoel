@@ -10,21 +10,6 @@ burgerMenu.addEventListener('click', () => {
     navbar.classList.toggle('active');
 });
 
-// Smooth scroll untuk semua href dengan '#'
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            window.scrollTo({
-                top: target.offsetTop - 50,
-                behavior: 'smooth'
-            });
-        }
-    });
-});
-
 // Ambil semua tautan di navbar
 const navbarLinks = document.querySelectorAll('.navbar a');
 
@@ -50,30 +35,21 @@ navbarLinks.forEach(link => {
 const toggleCheckbox = document.querySelector('.toggle-checkbox');
 const body = document.body;
 
+// Simpan preferensi dark mode ke localStorage
 toggleCheckbox.addEventListener('change', () => {
   if (toggleCheckbox.checked) {
     body.classList.add('dark-mode');
+    localStorage.setItem('darkMode', 'enabled'); // Simpan status dark mode
   } else {
     body.classList.remove('dark-mode');
+    localStorage.setItem('darkMode', 'disabled'); // Simpan status non-dark mode
   }
 });
 
-
-// Event listener untuk toggle dark mode
-darkModeToggle.addEventListener('click', () => {
-    body.classList.toggle('dark-mode');
-    darkModeToggle.classList.toggle('active');
-
-    // Simpan preferensi dark mode ke local storage
-    const isDarkMode = body.classList.contains('dark-mode');
-    localStorage.setItem('darkMode', isDarkMode);
-});
-
-// Mengecek apakah user telah mengatur ke dark mode sebelumnya
-const isDarkMode = localStorage.getItem('darkMode') === 'true';
-if (isDarkMode) {
-    body.classList.add('dark-mode');
-    darkModeToggle.classList.add('active');
+// Cek preferensi dark mode saat halaman dimuat
+if (localStorage.getItem('darkMode') === 'enabled') {
+  body.classList.add('dark-mode');
+  toggleCheckbox.checked = true; // Pastikan checkbox aktif jika dark mode aktif
 }
 
 // Function untuk mengecek suatu elemen berada dalam viewport
