@@ -429,10 +429,24 @@ label {
   text-align: justify;
 }
 
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+  .skills-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-container {
+    grid-template-columns: 1fr;
+  }
+}
+
 .skill {
   padding: 10rem 9% 2rem;
   background: var(--second-bg-color);
-  color: #000000;
+  color: var(--main-color);
 }
 
 .skill-content {
@@ -446,8 +460,9 @@ label {
 
 .skills-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
+  place-items: center;
 }
 
 .skill-item {
