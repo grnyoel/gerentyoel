@@ -14,7 +14,8 @@
 :root {
   --bg-color: #e8e8e8;
   --second-bg-color: #e8e8e8;
-  --main-color: #000000;
+  --main-color: #000;
+  --third-bg-color: #666;
 }
 
 html {
@@ -66,10 +67,25 @@ section {
   }
 }
 
-.home-content p {
+.home-content {
   opacity: 0;
   animation: slideInFromBottom 1s ease forwards;
   animation-delay: 1s;
+}
+
+.about-content {
+  animation: slideInFromBottom 2s ease forwards;
+  animation-delay: 2s;
+}
+
+.skills-container {
+  animation: slideInFromBottom 2s ease forwards;
+  animation-delay: 2s;
+}
+
+.education-item {
+  animation: slideInFromBottom 2s ease forwards;
+  animation-delay: 2s;
 }
 
 .header {
@@ -482,25 +498,87 @@ label {
   font-size: 1.8rem;
 }
 
-.portfolio {
+.education {
   padding: 10rem 9% 2rem;
   background: var(--second-bg-color);
 }
-.portfolio-content {
-  text-align: center;
-}
 
-.portfolio-content p, h3 {
-  font-size: 1.6rem;
-  margin-top: 1rem;
-  text-align: justify;
+.education-section {
+  max-width: 900px;
+  margin: auto;
 }
 
 .education-item {
   display: flex;
-  flex-direction: column;
-  align-items: left;
-  padding-top: 20px;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: var(--second-bg-color);
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  width: 80px;
+  height: 80px;
+  margin-right: 20px;
+}
+
+.details h2 {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+.details p {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+  text-align: justify;
+}
+
+.details em {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.details ul {
+  list-style-type: disc;
+  margin-left: 1.8rem;
+}
+
+.details ul li {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.details .date {
+  font-size: 1rem;
+  color: gray;
+}
+
+@media (max-width: 768px) {
+  .education-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .logo {
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .education-item {
+    padding: 10px;
+  }
+
+  .details h2 {
+    font-size: 1rem;
+  }
+
+  .logo {
+    width: 60px;
+    height: 60px;
+  }
 }
 
 .footer {
