@@ -73,6 +73,11 @@ section {
   animation-delay: 1s;
 }
 
+.dark-mode-toggle {
+  animation: slideInFromBottom 2s ease forwards;
+  animation-delay: 1s;
+}
+
 .about-content {
   animation: slideInFromBottom 2s ease forwards;
   animation-delay: 2s;
@@ -312,7 +317,6 @@ label {
   transform: translate(2em, 2em) rotate(-15deg);
 }
 
-
 .home {
   display: flex;
   justify-content: center;
@@ -398,6 +402,8 @@ label {
   width: 45%;
   max-width: 500px;
   border-radius: 3%;
+  animation: slideInFromBottom 2s ease forwards;
+  animation-delay: 2s;
 }
 
 /* Responsive section About buat Mobile */
@@ -477,7 +483,7 @@ label {
 .skills-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  gap: 5rem;
   place-items: center;
 }
 
@@ -511,6 +517,7 @@ label {
 .education-item {
   display: flex;
   align-items: center;
+  gap: 1rem;
   margin-bottom: 20px;
   padding: 15px;
   background-color: var(--second-bg-color);
@@ -530,13 +537,13 @@ label {
 }
 
 .details p {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   margin-bottom: 5px;
   text-align: justify;
 }
 
 .details em {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: #666;
 }
 
@@ -561,7 +568,7 @@ label {
     align-items: flex-start;
   }
 
-  .logo {
+  .edu-logo {
     margin-bottom: 10px;
   }
 }
@@ -575,7 +582,7 @@ label {
     font-size: 1rem;
   }
 
-  .logo {
+  .edu-logo {
     width: 60px;
     height: 60px;
   }
@@ -593,7 +600,7 @@ label {
 
 .footer-content {
   display: flex;
-  gap: 8px;
+  gap: 2rem;
   flex-wrap: wrap;
 }
 
@@ -602,7 +609,8 @@ label {
   align-items: center;
   font-size: 1.6rem;
   color: var(--main-color);
-  flex-basis: 50%;
+  flex-basis: 100%;
+  gap: 1rem;
 }
 
 .footer-item span {
