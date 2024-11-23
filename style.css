@@ -12,10 +12,9 @@
 }
 
 :root {
-  --bg-color: #e8e8e8;
-  --second-bg-color: #e8e8e8;
+  --bg-color: #fff;
+  --second-bg-color: #fff;
   --main-color: #000;
-  --third-bg-color: #666;
 }
 
 html {
@@ -248,7 +247,7 @@ label {
   width: 7em;
   border: 0px solid transparent;
   border-radius: 10em;
-  background-color: white;
+  background-color: #e8e8e8;
   transition: background-color 250ms;
 }
 
@@ -483,7 +482,7 @@ label {
 .skills-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 5rem;
+  gap: 2rem;
   place-items: center;
 }
 
